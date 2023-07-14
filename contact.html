@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>MUSK EDUCATION</title>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="logo">
+                <img src="logo.png" alt="MUSK EDUCATION">
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="link">Home</a></li>
+                    <li><a href="courses.html" class="link">Courses</a></li>
+                    <li><a href="about.html" class="link">About</a></li>
+                    <li><a href="contact.html" class="link active">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" onclick="location.href='sign_up.html'">Sign In</button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+    </div>
+    <section>
+        <div class="container">
+            <div class="contact-info">
+                <div>
+                    <h2>Contact Info</h2>
+                    <ul class="info">
+                        <li>
+                            <span><i class="fa-solid fa-location-dot" style="color: blueviolet;"></i></span>
+                            <span>
+                               No. 7, Pangsapuri Damai, Subang Bestari, Selangor, 40150 Shah Alam
+                            </span>
+                        </li>
+                        <li>
+                            <span><i class="fa-solid fa-square-envelope" style="color: #eb640a;"></i></span>
+                            <span>
+                                B2200773@helplive.edu.my
+                            </span>
+                        </li>
+                        <li>
+                            <span><i class="fa-solid fa-phone" style="color: #fafafa;"></i></span>
+                            <span>
+                                +60 122922867
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="social-network">
+                   
+                </ul>
+            </div>
+            <div class="contact-form">
+                <h2>Send a Message</h2>
+                <div class="form-box">
+                    <div class="input-box w50">
+                        <input type="text" name="myInput" required>
+                        <span>First Name</span>
+                    </div>
+                    <div class="input-box w50">
+                        <input type="text" name="myInput" required>
+                        <span>Last Name</span>
+                    </div>
+                    <div class="input-box w50">
+                        <input type="text" name="myInput" required>
+                        <span>Email Address</span>
+                    </div>
+                    <div class="input-box w50">
+                        <input type="text" name="myInput" required>
+                        <span>Mobile Number</span>
+                    </div>
+                    <div class="input-box w100">
+                        <textarea name="myInput" required></textarea>
+                        <span>Write your message here...</span>
+                    </div>
+                    <div class="input-box w100">
+                        <input type="submit" value="Send">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/chim.kahshing"><i class="fa-brands fa-facebook fa-bounce"
+                    style="color: #005af5;"></i></a>
+            <a href="https://www.instagram.com/chim_kah_shing/"><i class="fa-brands fa-instagram fa-bounce"
+                    style="color: #8f0000;"></i></a>
+            <a href="https://twitter.com/Krios690"><i class="fa-brands fa-twitter fa-bounce"
+                    style="color: #00ccff;"></i></a>
+        </div>
+        <p>&copy;<span id="year"></span> Help.edu.my | All Rights Reserved</p>
+    </footer>
+    <script>
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+            if (i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
+        var year = new Date();
+        var newYear = year.getFullYear();
+        document.getElementById("year").innerHTML = newYear;
+    </script>
+</body>
+</html>

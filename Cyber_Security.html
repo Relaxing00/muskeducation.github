@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MUSK EDUCATION - About Us</title>
+  <link rel="stylesheet" href="cyber_security.css">
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <div class="wrapper">
+      <nav class="nav">
+          <div class="logo">
+              <img src="logo.png" alt="MUSK EDUCATION">
+            </div>
+          <div class="nav-menu" id="navMenu">
+              <ul>
+                  <li><a href="index.html" class="link">Home</a></li>
+                  <li><a href="courses.html" class="link">Courses</a></li>
+                  <li><a href="about.html" class="link">About</a></li>
+                  <li><a href="contact.html" class="link">Contact</a></li>
+                  
+              </ul>
+          </div>
+          <div class="nav-button">
+            <a href="sign_up.html" class="btn white-btn" id="registerBtn">Sign Up</a>
+
+
+
+            
+           
+          </div>
+          <div class="nav-menu-btn">
+              <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+          </div>
+      </nav>
+
+      <div>
+      <h1>Cyber Security</h1>
+    </div>
+      <div class="course">
+          <h2>Course Overview</h2>
+          <p>Cyber Security course provides individuals with the knowledge and skills necessary
+             to protect computer systems, networks, and data from unauthorized access, cyber threats, and
+              information breaches. The course typically covers various aspects of cyber security, including
+               risk management, network security, cryptography, secure coding practices, incident response, and ethical hacking.</p>
+        
+          <div class="section-titles-container">
+            <div class="section-title">
+              Duration
+              <p>3 Years (full-time)</p>
+            </div>
+            <div class="section-title">
+              Entry Requirements
+              <ul>
+                <li>High school diploma or equivalent</li>
+                <li>Basic computer literacy</li>
+                <li>No prior programming experience required</li>
+              </ul>
+            </div>
+            <div class="section-title">
+              English Language Requirements
+              <p>Proficiency in English is required to participate in this course. Applicants whose first language is not English must demonstrate English language proficiency by providing one of the following:</p>
+              <ul>
+                <li>TOEFL score of 80 or higher</li>
+                <li>IELTS score of 6.0 or higher</li>
+                <li>Other equivalent English language proficiency test results</li>
+              </ul>
+            </div>
+            <div class="section-title">
+              Enrollment Fee
+              <p>599.99 RM Only Per month
+            </div>
+          </div>
+        </div>      
+        </div>
+        <div class="center">
+          <button class="checkout-btn" onclick="redirectToCheckout()">Enroll Now</button>
+        </div>
+        <footer class="footer">
+         
+          <div class="social-icons">
+            <a href="https://www.facebook.com/chim.kahshing"><i class="fa-brands fa-facebook fa-bounce" style="color: #005af5;"></i></a>
+            <a href="https://www.instagram.com/chim_kah_shing/"><i class="fa-brands fa-instagram fa-bounce" style="color: #8f0000;"></i></a>
+            <a href="https://twitter.com/Krios690"><i class="fa-brands fa-twitter fa-bounce" style="color: #00ccff;"></i></a>
+            <p>&copy;<span id="year"></span> Help.edu.my | All Rights Reserved</p>
+              
+            </div>
+        </footer>
+   
+
+<script>
+     function myMenuFunction() {
+          var i = document.getElementById("navMenu");
+      
+          if (i.className === "nav-menu") {
+              i.className += " responsive";
+          } else {
+              i.className = "nav-menu";
+          }
+      }
+
+       var year = new Date();
+       var newYear = year.getFullYear();
+       document.getElementById("year").innerHTML = newYear;
+  </script>
+    <script>
+      function redirectToCheckout() {
+          window.location.href = "checkout.html";
+      }
+  </script>
+  
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="index.css">
+  <title>Login & Registration</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="nav">
+      <div class="logo">
+        <img src="logo.png" alt="MUSK EDUCATION">
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="index.html" class="link active">Home</a></li>
+          <li><a href="courses.html" class="link">Courses</a></li>
+          <li><a href="about.html" class="link">About</a></li>
+          <li><a href="contact.html" class="link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-button">
+        <button class="btn white-btn" onclick="location.href='sign_up.html'">Sign In</button>
+      </div>
+      <div class="nav-menu-btn">
+        <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+      </div>
+    </nav>
+
+    <div class="homepage-content">
+      <h1>Welcome to MUSK EDUCATION</h1>
+    </div>
+    <div class="homepage-content">
+      <p>Discover the world of technology and enhance your skills with our comprehensive courses.</p>
+    </div>
+    <div class="container">
+      <hr>
+
+      <div class="slideshow">
+        <div class="w3-content w3-display-container">
+          <img class="mySlides fade"
+            src="https://frontcore.com/wp-content/uploads/2023/03/LMS-learning-management-system-blog-header.jpg" alt="pic">
+          <img class="mySlides fade"
+            src="https://articulate-heroes.s3.amazonaws.com/uploads/rte/elvgtfxp_3_Things_That_Can_Make_Or_Break_Your_E-Learning_Design.png" alt="pic2">
+          <a class="prev" onclick="plusDivs(-1, 0)">&#10094;</a>
+          <a class="next" onclick="plusDivs(1, 0)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+          <span class="dot" onclick="currentDiv(1, 0)"></span>
+          <span class="dot" onclick="currentDiv(2, 0)"></span>
+        </div>
+      </div>
+      <hr>
+
+
+
+    </div>
+
+    <footer class="footer">
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/chim.kahshing"><i class="fa-brands fa-facebook fa-bounce"
+            style="color: #005af5;"></i></a>
+        <a href="https://www.instagram.com/chim_kah_shing/"><i class="fa-brands fa-instagram fa-bounce"
+            style="color: #8f0000;"></i></a>
+        <a href="https://twitter.com/Krios690"><i class="fa-brands fa-twitter fa-bounce"
+            style="color: #00ccff;"></i></a>
+        <p>&copy;<span id="year"></span> Help.edu.my | All Rights Reserved</p>
+
+      </div>
+    </footer>
+
+    <script>
+      function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+
+        if (i.className === "nav-menu") {
+          i.className += " responsive";
+        } else {
+          i.className = "nav-menu";
+        }
+      }
+
+      var year = new Date();
+      var newYear = year.getFullYear();
+      document.getElementById("year").innerHTML = newYear;
+
+      var transitionOccurred = false;
+      var slideIndex = 1;
+      var slideshows = document.getElementsByClassName("slideshow");
+
+      for (var i = 0; i < slideshows.length; i++) {
+        slideshows[i].setAttribute("data-currentslide", 1);
+        showDivs(slideshows[i].getAttribute("data-currentslide"), i);
+        startSlideshow(i);
+      }
+
+      function plusDivs(n, slideshowIndex) {
+        slideIndex = parseInt(slideshows[slideshowIndex].getAttribute("data-currentslide"));
+        showDivs(slideIndex += n, slideshowIndex);
+      }
+
+      function currentDiv(n, slideshowIndex) {
+        showDivs(slideIndex = n, slideshowIndex);
+      }
+
+      function showDivs(n, slideshowIndex) {
+        var i;
+        var currentSlideshow = slideshows[slideshowIndex];
+        var slides = currentSlideshow.getElementsByClassName("mySlides");
+        var dots = currentSlideshow.getElementsByClassName("dot");
+
+        if (n > slides.length) {
+          slideIndex = 1;
+          if (slideshowIndex === 0 && !transitionOccurred) {
+            transitionOccurred = true;
+            // Scroll to the second slideshow
+            $('html, body').animate({
+              scrollTop: $(slideshows[1]).offset().top
+            }, 800);
+          }
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+
+        currentSlideshow.setAttribute("data-currentslide", slideIndex);
+
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+
+      function startSlideshow(slideshowIndex) {
+        setInterval(function () {
+          plusDivs(1, slideshowIndex);
+        }, 3000); // Adjust the time interval (in milliseconds) as needed
+      }
+    </script>
+  </div>
+</body>
+
+</html>
